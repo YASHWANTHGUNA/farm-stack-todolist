@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --background-color: #f0f2f5;
+  --container-bg: #ffffff;
+  --primary-color: #4a90e2;
+  --primary-hover-color: #357abd;
+  --text-color: #333;
+  --secondary-text-color: #666;
+  --border-color: #ddd;
+  --success-color: #5cb85c;
+  --danger-color: #d9534f;
+  --danger-hover-color: #c9302c;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+.todo-app-container {
+  width: 100%;
+  max-width: 550px;
+  background: var(--container-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  margin: 1rem;
+}
+
+header h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.todo-input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.todo-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todo-button:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: var(--container-bg);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.todo-item:first-child {
+    border-top: 1px solid var(--border-color);
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--secondary-text-color);
+}
+
+.todo-text {
+  flex-grow: 1;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: var(--danger-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 5px;
+}
+
+.delete-button:hover {
+  color: var(--danger-hover-color);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  body {
+    padding-top: 10px;
+  }
+
+  .todo-app-container {
+    margin: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .todo-form {
+    flex-direction: column;
+  }
+
+  .todo-button {
+    width: 100%;
+  }
+}
